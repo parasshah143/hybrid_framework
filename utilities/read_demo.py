@@ -6,6 +6,10 @@ import pandas
 df=pandas.read_csv(filepath_or_buffer="../test_data/test_invalid_login_data.csv",delimiter=";")
 
 print(df)
+print(df.values.tolist())
+print("-"*100)
+
+
 print(df.loc[0])
 
 print(df.loc[0].tolist())
@@ -42,5 +46,5 @@ for i in df.index:
 
 print(list)
 
-
+print(df.values)
 print(df.values.tolist())
