@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 from base.webdriver_listener import WebDriverWrapper
 from utilities import data_source
 
+"""Login related test cases """
+
 
 class TestLogin(WebDriverWrapper):
     def test_valid_login(self):
@@ -15,6 +17,7 @@ class TestLogin(WebDriverWrapper):
         assert_that("Dashboard").is_equal_to(actual_text)
 
     """Invalid Login Test - Data Driven Using .csv file"""
+
     @pytest.mark.parametrize("username, password, expected_error", data_source.test_invalid_login_data)
     def test_invalid_login(self, username, password, expected_error):
         self.driver.find_element(By.NAME, "username").send_keys(username)
